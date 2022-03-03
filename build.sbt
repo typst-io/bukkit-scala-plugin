@@ -12,5 +12,6 @@ lazy val plugin = (project in file("plugin"))
     libraryDependencies ++= Seq(
       "org.spigotmc" % "spigot-api" % "1.18.1-R0.1-SNAPSHOT" % "provided",
       "org.typelevel" %% "cats-core" % "2.7.0"
-    )
+    ),
+    assembly / assemblyJarName := s"${name.value}-assembly_${scalaBinaryVersion.value}-${version.value}.jar"
   )

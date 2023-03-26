@@ -11,7 +11,7 @@ lazy val copyJar = InputKey[Unit]("copyJar")
 lazy val plugin = (project in file("plugin"))
   .settings(
     name := "bukkit-scala-plugin",
-    version := "1.13.0",
+    version := "1.14.0",
     scalaVersion := "2.13.10",
     crossScalaVersions := Seq("2.13.10", "3.1.1"),
     resolvers ++= Seq(
@@ -22,7 +22,7 @@ lazy val plugin = (project in file("plugin"))
       "io.typecraft" % "bukkit-view-core" % "5.1.2",
       "io.typecraft" % "command-bukkit" % "0.8.0",
       "io.typecraft" % "command-scala" % "0.8.0",
-      "io.typecraft" % "bukkit-object" % "0.3.0",
+      "io.typecraft" % "bukkit-object" % "0.4.1",
       "io.typecraft" %% "ender-core" % "0.1.0-SNAPSHOT", // TODO: why this not contains in `ender-bukkit` as a transitive
       "io.typecraft" %% "ender-bukkit" % "0.1.0-SNAPSHOT",
       "org.typelevel" %% "cats-core" % "2.7.0",

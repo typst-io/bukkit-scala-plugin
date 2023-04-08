@@ -11,7 +11,7 @@ lazy val copyJar = InputKey[Unit]("copyJar")
 lazy val plugin = (project in file("plugin"))
   .settings(
     name := "bukkit-scala-plugin",
-    version := "1.14.0",
+    version := "1.14.1",
     scalaVersion := "2.13.10",
     crossScalaVersions := Seq("2.13.10", "3.1.1"),
     resolvers ++= Seq(
@@ -19,7 +19,7 @@ lazy val plugin = (project in file("plugin"))
     ),
     libraryDependencies ++= Seq(
       "org.spigotmc" % "spigot-api" % "1.18.1-R0.1-SNAPSHOT" % "provided",
-      "io.typecraft" % "bukkit-view-core" % "5.1.2",
+      "io.typecraft" % "bukkit-view-core" % "5.1.3",
       "io.typecraft" % "command-bukkit" % "0.8.0",
       "io.typecraft" % "command-scala" % "0.8.0",
       "io.typecraft" % "bukkit-object" % "0.4.1",

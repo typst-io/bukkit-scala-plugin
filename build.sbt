@@ -10,15 +10,15 @@ lazy val copyJar = InputKey[Unit]("copyJar")
 
 lazy val plugin = (project in file("plugin"))
   .settings(
-    name := "bukkit-scala-plugin",
+    name := "bukkit-scala-plugin-legacy",
     version := "1.14.1",
     scalaVersion := "2.13.10",
-    crossScalaVersions := Seq("2.13.10", "3.1.1"),
+    crossScalaVersions := Seq("2.13.10", "3.2.1"),
     resolvers ++= Seq(
       Resolver.mavenLocal
     ),
     libraryDependencies ++= Seq(
-      "org.spigotmc" % "spigot-api" % "1.18.1-R0.1-SNAPSHOT" % "provided",
+      "org.spigotmc" % "spigot-api" % "1.12.2-R0.1-SNAPSHOT" % "provided",
       "io.typecraft" % "bukkit-view-core" % "5.1.3",
       "io.typecraft" % "command-bukkit" % "0.8.0",
       "io.typecraft" % "command-scala" % "0.8.0",
@@ -26,12 +26,12 @@ lazy val plugin = (project in file("plugin"))
       "io.typecraft" %% "ender-core" % "0.1.0-SNAPSHOT", // TODO: why this not contains in `ender-bukkit` as a transitive
       "io.typecraft" %% "ender-bukkit" % "0.1.0-SNAPSHOT",
       "org.typelevel" %% "cats-core" % "2.7.0",
-      "org.tpolecat" %% "doobie-core" % "1.0.0-RC2"
+      "org.tpolecat" %% "doobie-core" % "1.0.0-RC2",
+      "io.circe" %% "circe-yaml-legacy" % "0.14.2-50-8e704e6"
     ) ++ Seq(
       "io.circe" %% "circe-core",
       "io.circe" %% "circe-generic",
-      "io.circe" %% "circe-parser",
-      "io.circe" %% "circe-yaml"
+      "io.circe" %% "circe-parser"
     ).map(_ % circeVersion),
     assemblyMergeStrategy := {
       case PathList("plugin.yml") => MergeStrategy.first
